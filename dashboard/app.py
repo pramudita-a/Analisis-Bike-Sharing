@@ -9,8 +9,6 @@ st.set_page_config(page_title="Bike Rental Analysis Dashboard", layout="wide")
 
 # ---------------------------------------------------------------------------
 # 1. LOAD DATA
-# Path dibuat absolut berdasarkan lokasi file app.py, jadi tetap jalan
-# walaupun Streamlit dijalankan dari folder root repo (seperti di Streamlit Cloud).
 # ---------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
 CANDIDATES = [
@@ -40,8 +38,6 @@ def load_data() -> pd.DataFrame:
     df = pd.read_csv(csv_path)
     df["dteday"] = pd.to_datetime(df["dteday"])
 
-    # main_data.csv adalah hasil merge day.csv + hour.csv (kolom berakhiran _x = data harian,
-    # _y = data per jam). Kita pakai data harian saja.
     rename_map = {
         "season_x": "season", "yr_x": "yr", "mnth_x": "mnth",
         "holiday_x": "holiday", "weekday_x": "weekday",
@@ -59,7 +55,7 @@ def load_data() -> pd.DataFrame:
     ]
     df = df[[c for c in daily_cols if c in df.columns]]
 
-    # Baris harian terduplikasi 24x akibat merge dengan data per jam -> hapus
+    # Data harian terduplikasi 24x akibat merge dengan data per jam -> hapus
     df = df.drop_duplicates(subset="dteday").reset_index(drop=True)
     return df
 
@@ -174,7 +170,7 @@ st.pyplot(fig)
 plt.close(fig)
 
 # ---------------------------------------------------------------------------
-# 10. KELOMPOK PENYEWAAN (BINNING)
+# 10. KELOMPOK PENYEWAAN
 # ---------------------------------------------------------------------------
 st.subheader("Rental Groups (Season - Weather)")
 high_rental = season_weather_rental[season_weather_rental > 5000].index.tolist()
