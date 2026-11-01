@@ -59,4 +59,4 @@ day.csv : Pada data set ini berisikan informasi mengenai suhu, kelembapan pada s
 
 5. # Menjalankan Aplikasi Streamlit (Opsional)
    
-  Jika ingin menjalankan aplikasi Streamlit (di luar Google Colab), masuk ke direktori repositori Anda, lalu jalankan perintah berikut: streamlit run app.py 
+   Jika ingin menjalankan aplikasi Streamlit (di luar Google Colab), masuk ke direktori repositori Anda, lalu jalankan perintah berikut: `streamlit run dashboard/app.py`.
