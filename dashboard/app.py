@@ -1,9 +1,10 @@
+import streamlit as st
+
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-import streamlit as st
 
 st.set_page_config(page_title="Bike Rental Analysis Dashboard", layout="wide")
 
