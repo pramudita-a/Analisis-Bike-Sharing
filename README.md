@@ -55,7 +55,7 @@ day.csv : Pada data set ini berisikan informasi mengenai suhu, kelembapan pada s
 
 4. # Link Dashboard
    
-   Untuk Link Dasboard bisa di akses melalui url : (https://47iaoqsdf7cktgqkvaqvsr.streamlit.app/)
+   Untuk Link Dasboard bisa di akses melalui url : (https://p5xxobcvh3xewscpsmjelt.streamlit.app/)
 
 5. # Menjalankan Aplikasi Streamlit (Opsional)
    
